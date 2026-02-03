@@ -1,0 +1,1 @@
+Estos respositorios estan destinados a la creación de ejercicios y proyectos en python de los más simples a otros más complejos.
