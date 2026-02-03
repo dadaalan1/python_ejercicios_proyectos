@@ -24,6 +24,6 @@ def calcular_promedio():
     promedio = suma / len(lista)
     print(f'suma total: {suma}')
     print(f'la cantidad de numeros ingresados es {len(lista)}')
-    print(f'el promedio es: {suma} dividido {len(lista)} cuyo pormedio es {promedio}')
+    print(f'el promedio es: {suma} dividido {len(lista)} cuyo resultado es {promedio}')
     
 calcular_promedio()        
