@@ -10,6 +10,8 @@
 input_frase = input('Ingresa una frase: ')
 frase_minuscula = input_frase.lower()
 
+# omitir el acento
+frase_minuscula = frase_minuscula.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
 vocales = ['a', 'e', 'i', 'o', 'u']
 
 contador_vocales = 0
