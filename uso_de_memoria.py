@@ -11,11 +11,11 @@ def mostrar_uso_memoria():
     uso_actual = memoria.used / (1024 ** 3)  # Convertir a GB
     porcentaje_uso = memoria.percent
     total_memoria = memoria.total / (1024 ** 3)  # Convertir a GB
-
+    print()
     print(f"Uso actual de memoria RAM: {uso_actual:.2f} GB")
     print(f"Porcentaje de uso: {porcentaje_uso: .2f}%")
     print(f"Total de memoria disponible: {total_memoria:.2f} GB")
-
+    print()
 # def establecer_limite_memoria():
 #     limite = float(input("Ingrese el límite de uso de memoria en GB: "))
 #     return limite
