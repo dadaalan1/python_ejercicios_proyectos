@@ -3,13 +3,12 @@
 # total de memoria disponible. Además, debe permitir al usuario establecer 
 # un límite de uso de memoria y mostrar una alerta si se supera ese límite.
 
-
-import shutil
+import psutil
 
 def mostrar_uso_memoria():
-    memoria = shutil.disk_usage("/")
-    uso_actual = (memoria.total - memoria.free) / (1024 ** 3)  # Convertir a GB
-    porcentaje_uso = (uso_actual / (memoria.total / (1024 ** 3))) * 100
+    memoria = psutil.virtual_memory()
+    uso_actual = (memoria.total - memoria.available) / (1024 ** 3)  # Convertir a GB
+    porcentaje_uso = memoria.percent
     total_memoria = memoria.total / (1024 ** 3)  # Convertir a GB
     print()
     print(f"Uso actual de memoria RAM: {uso_actual:.2f} GB")
@@ -21,8 +20,8 @@ def mostrar_uso_memoria():
 #     return limite
 
 def verificar_limite_memoria(limite):
-    memoria = shutil.disk_usage("/")
-    uso_actual = (memoria.total - memoria.free) / (1024 ** 3)  # Convertir a GB
+    memoria = psutil.virtual_memory()
+    uso_actual = (memoria.total - memoria.available) / (1024 ** 3)  # Convertir a GB
 
     if uso_actual > limite:
         print("¡Alerta! Se ha superado el límite de uso de memoria.")
